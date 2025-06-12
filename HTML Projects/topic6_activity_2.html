@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+        body{
+            font-size: 17px;
+            background-image:url("https://images.unsplash.com/photo-1603398938378-e54eab446dde?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTV8fG1lZGljYWx8ZW58MHx8MHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60");
+            background-attachment: fixed;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+        form{
+            background: rgba(0,0,0,0.7);
+            width: 500px;
+            padding-top: 50px;
+            padding-bottom: 50px;
+            padding-left: 30px;
+            margin:auto;
+            color: whitesmoke;
+        }
+        textarea{
+            width:450px;
+            height: 250px;
+            border-radius: 25px;
+            border: 0px;
+        }
+        input{
+            width:300px;
+            padding: 5px;
+            border-radius: 5px;
+        }
+
+    </style>
+</head>
+<body>
+    <form>
+        <h1>Schedule An Appointment</h1>
+        <p>
+            <label>Name:<br>
+                <input type="text" name="name" placeholder="Enter your name">
+            </label>
+        </p>
+        <p>
+            <label>Age:<br>
+                <input type="number" name="age" placeholder="Enter your age">
+            </label>
+        </p>
+        <p>
+            <label>When:<br>
+                <input type="datetime-local" name="datetime">
+            </label>
+        </p>
+        <p>
+            Gender<br>
+            <label><input type="radio" name="gender" value="Male"><br> Male</label><br>
+            <label><input type="radio" name="gender" value="Female"><br> Female</label><br>
+            <label><input type="radio" name="gender" value="Others"><br> Other</label>
+        </p>
+        <p>
+            Main concern for booking this appointment<br><br>
+            <label><input type="checkbox" name="concern_heart"> Heart Problem</label><br><br>
+            <label><input type="checkbox" name="concern_mental"> Mental Health</label><br><br>
+            <label><input type="checkbox" name="concern_joint" value="Others"> Joint Pain</label>
+        </p>
+        <p>
+            Send a quote<br>
+            <textarea name="quote" rows=5 cols=40></textarea>
+        </p>
+
+    </form>
+</body>
+</html>

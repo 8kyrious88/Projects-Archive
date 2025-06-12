@@ -103,6 +103,7 @@ class Shopee_Orders_Manager:
                 "order_sn":order_number
             }
             response = requests.get(url=URL, params=parameters)
+            print(response.json()["response"]["pickup"]["address_list"][0]["time_slot_list"])
             result = response.json()["response"]["pickup"]["address_list"][0]["time_slot_list"][0]["pickup_time_id"]
             pickup_time_id_list.append(result)
         return pickup_time_id_list

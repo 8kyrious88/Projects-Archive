@@ -1,0 +1,601 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Alumni+Sans+SC:ital,wght@0,405;1,405&family=Fugaz+One&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&family=Rubik+Mono+One&display=swap');
+
+body {
+    padding: 0px;
+    margin: 0px;
+    background-color: #080808;
+    box-sizing: border-box;
+}
+
+/* Navigator Bar Section */
+.navbar{
+    position: fixed;          /* Fixes the navbar at the top */
+    top: 0;                   /* Aligns it to the top edge */
+    left: 0;                  /* Ensures it stretches from left */
+    right: 0;                 /* Ensures it stretches to right */
+    z-index: 2;
+    display:flex;
+    align-items: center;
+    justify-content: space-around;
+    background-color: #202020;  
+    font-family: "Alumni Sans SC", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 100;
+    font-style: normal;
+    color: white;
+    height: 100%;
+    max-height: 65px;
+    /* border-bottom: solid 1px white; */
+}
+
+
+.logo{
+    position: absolute;
+    font-size: 2.5rem;
+    left: 200px;
+    color: #999999 ;
+    font-family: "Rubik Mono One", monospace;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.nav_options {
+    display: flex;
+    list-style-type: none;
+    position: absolute;
+    margin: 0 auto;
+}
+
+.navbar ul li a{
+    text-decoration: none;
+    margin-right: 50px;
+    color: white;
+    font-size: 25px;
+}
+
+.navbar ul li a:hover{
+    font-weight: 500;
+    color:rgb(248, 112, 112);
+}
+
+#sales_wording{
+    background-color: rgb(133, 29, 29);
+    margin-right: 45px;
+    padding-left: 5px;
+    padding-right: 5px;
+    font-size: 30px;
+    font-family: "Roboto Condensed", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 900;
+    font-style: normal;
+}
+
+#sales_wording:hover{
+    background-color: #fff;
+    color: black;
+}
+
+.search_bar{
+    font-family: "Alumni Sans SC", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 500;
+    font-style: normal;
+    font-size: 1.5rem;
+    color: black;
+    height: 1.5rem;
+    width: 200px;
+    position: absolute;
+    right: 200px;
+}
+
+/* Basement page - Images Slide Section */
+.container {
+    padding: 5rem;
+    padding-bottom: 0;
+}
+
+.slider_wrapper{
+    position:relative;
+    max-width: 1400px;
+    max-height: 800px;
+    margin: 0 auto; 
+}
+
+.slider {
+    margin-top: 25px;
+    display: flex;
+    aspect-ratio: 16/9;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    border-radius: 0.5rem;
+    box-shadow: 0px 10px 30px 10px #303030;;
+}
+
+.slider::-webkit-scrollbar {
+    display: none;
+}
+
+.slider img{
+    flex:1 0;
+    scroll-snap-align: start;
+    object-fit: cover;
+}
+
+.slider_nav {
+    display: flex;
+    column-gap: 1rem;
+    position:absolute;
+    bottom:1.25rem;
+    left:50%;
+    transform: translateX(-50%);
+    z-index:1;
+}
+
+.slider_nav a{
+    width: 0.5rem;
+    height: 0.5rem;
+    border-radius: 50%;
+    background-color: #fff;
+    opacity: 0.75;
+    transition: opacity ease 250ms;
+}
+
+.slider_nav a:hover{
+    opacity: 1;
+}
+
+/* Footer Section */
+.copyright {
+    position: absolute;
+    text-align: center;
+    background-color: rgba(128, 128, 128, 0.315);
+    bottom: auto;
+    right: 0;
+    left: 0;
+    font-family: "Alumni Sans SC", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 200;
+    font-style: normal;
+    font-size: 1.5rem;
+    color: #fff;
+    padding-bottom: 2rem;
+}
+
+.T_AND_C a{
+    font-family: "Alumni Sans SC", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 200;
+    font-style: normal;
+    color: #fff;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    font-size: 1.2rem;
+}
+
+/* Basement page - Super-duper-sales section */
+.background-div {
+    justify-content: space-around;
+    margin: 0 auto;
+    max-width: 1400px;
+    height: 800px;
+    background-image: url('./images/skeleton_background.jpg'); /* Replace with your image path */
+    background-size: cover; /* Scales the image to cover the div */
+    background-position: center; /* Centers the image */
+    background-repeat: no-repeat; /* Prevents tiling */
+}
+
+.information_paragraph_1 {
+    margin: 0 auto;
+    font-family: "Fugaz One", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 4rem;
+    align-items: center;
+    color: rgba(255, 255, 255, 0.712);
+    text-align: center;
+    padding-top: 75px;
+}
+
+.information_paragraph_2 {
+    margin: 0 auto;
+    align-items: center;
+    text-align: center;
+    margin-top: 450px;
+
+    background-color: rgba(133, 29, 29, 0.479);
+    font-size: 4rem;
+    font-family: "Roboto Condensed", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 900;
+    font-style: normal;
+    border: solid 5px white;
+    border-left: solid 5px black;
+    border-right: solid 5px black;
+}
+
+.information_paragraph_2 a{
+    color: rgb(216, 216, 216);
+    text-decoration: none;
+}
+
+.information_paragraph_2 a:hover{
+    color: black;
+    border-radius: 10px;
+}
+
+/* Basement page - Categories Section */
+.categories_container{
+    width: 1400px;
+    margin: 60px auto;
+    display:flex;
+    justify-content: space-between;
+}
+
+.categories_container_box{
+    width: 320px;
+    height: 400px;
+    background-color: rgb(196, 24, 24);
+    background-repeat: no-repeat;
+    background-size: cover;
+    border: solid 2px #999999;
+    border-radius: 10px;
+    text-decoration: none;
+}
+
+.categories_container_box:hover{
+    width: 340px;
+    height: 420px;
+}
+
+.categories_container_box h3{
+    margin: 0;
+    font-size: 32px;
+    color:rgba(255, 255, 255, 0.712);
+    font-family: Roboto;
+    font-weight: 600;
+    text-shadow: 2px 2px 8px rgb(14, 155, 155);
+}
+
+.categories_container_box:nth-child(1){  /*Selec Category Box 1*/
+    background-image: url(./images/graphic\ card.jpg);
+}
+
+.categories_container_box:nth-child(2){  /*Selec Category Box 2*/
+    background-image: url(./images/gaming\ keyboard.jpg);
+}
+
+.categories_container_box:nth-child(3){  /*Selec Category Box 3*/
+    background-image: url(./images/gaming\ mouse.jpg);
+}
+
+.categories_container_box:nth-child(4){  /*Selec Category Box 4*/
+    background-image: url(./images/accessory.webp);
+}
+
+.terms_and_condition{
+    max-width: 1400px;
+    margin: 100px auto;
+}
+
+#t_and_c_title {
+    text-align: center;
+    align-items: center;
+    margin:0 auto;
+    margin-bottom: 30px;
+    font-size: 30px;
+    text-decoration: underline;
+    color: white;
+}
+
+.terms_and_condition_details{
+    text-align: justify;
+    font-size: 20px;
+    color: white;
+}
+
+.contact_container{
+    max-width: 800px;
+    margin: 100px auto;
+}
+
+.contact_details h3{
+    color:white;
+    font-family: "Fugaz One", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 4rem;
+    text-align: center;
+    align-items: center;
+}
+
+.contact_details p{
+    color:white;
+    text-align: justify;
+    font-size: 17.5px;
+    margin-bottom: 35px;
+}
+
+.customer_service_form{
+    color: white;
+}
+
+.particulars_form_container p{
+    margin: 0;
+    font-size: 16px;
+    font-family: "Roboto";
+    font-weight: 100;
+    font-style: normal;
+}
+
+.particulars_form_row {
+    display: flex;
+    margin-bottom: 20px;
+    max-width: 800px;
+}
+
+.particulars_form_col {
+    width: 100%;
+    max-width: 400px;
+}
+
+.particulars_form_cell{
+    width: 100%;
+    max-width: 390px;
+    font-family: "Roboto";
+    font-weight: 100;
+    font-size: 16px;
+    border-radius: 5px;
+    flex:100%;
+}
+
+.particulars_form_textarea{
+    width: 100%;
+    max-width: 800px;
+    height: 150px;
+}
+
+#issue_description {
+    width: 100%;
+    height: 100%;
+    border-radius: 5px;
+    line-height: 25px;
+    font-family: "Roboto";
+    font-weight: 100;
+    font-size: 16px;
+}
+
+.submit_button_container{
+    margin: 50px auto;
+    display: flex;
+    justify-content: center;
+}
+
+.submit_button{
+    border: none;
+    cursor:pointer;
+    background-color: rgb(133, 29, 29);
+    font-family: "Alumni Sans SC", sans-serif;
+    font-weight: 900;
+    font-size: 32px;
+    color: white;
+    border-radius: 5px;
+}
+
+.store_introduction_container{
+    margin: 0 auto;
+    max-width: 1400px;
+}
+
+.store_introduction {
+    margin: 100px auto;
+}
+
+#store_front_image {
+    display: block;
+    margin: 0 auto;
+    width: 100%;
+    max-width: 1400px;
+    border: solid 2px rgb(224, 224, 224);
+    border-radius: 10px;
+}
+
+.store_introduction_title{
+    color: rgb(224, 224, 224);
+    font-family: "Roboto Condensed", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 900;
+    font-style: normal;
+    font-size: 42px;
+    text-align: center;
+    border: solid 2px rgb(224, 224, 224);
+    background-color: rgb(23, 119, 136);
+    border-radius: 10px;
+}
+
+.store_introduction_row {
+    display: flex;
+    border: solid 2px rgb(224, 224, 224);
+    background-color: rgb(23, 119, 136);
+    border-radius: 10px;
+}
+
+.store_introduction_paragraph {
+    font-size: 20px;
+    color: white;
+    text-align: justify;
+    margin: 0 25px;
+}
+
+.company_history_container{
+    margin: 0 auto;
+    max-width: 1400px;
+}
+
+.store_introduction_image {
+    max-width: 400px;
+}
+
+
+.company_history_table {
+    color: white;
+    border-collapse: collapse;
+    margin-bottom: 100px;
+    width: 100%;
+    font-size: 20px;
+}
+
+.company_history_table caption{
+    text-align: left;
+    font-size: 40px;
+    padding-bottom: 10px;
+    text-decoration: underline;
+}
+
+.company_history_table td, th{
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+}
+
+#product1{
+    color: white;
+    text-align: center;
+    max-width: 1400px;
+    margin: 100px auto;
+    max-width: 1400px;
+}
+
+#product1 .pro{
+    width: 20%;
+    min-width: 250px;
+    padding: 10px 12px;
+    border: solid 1px #cce7d0;
+    cursor: pointer;
+    box-shadow: 10px 10px 15px rgba(255, 255, 255, 0.192);
+    margin: 15px 0;
+    transition: 0.2s ease;
+    position:relative;
+    margin: 20px 20px;
+}
+
+#product1 .pro:hover{
+    box-shadow: 10px 10px 15px rgba(255, 255, 255, 0.400);
+}
+
+#product1 .pro img{
+    width: 100%;
+    border-radius: 20px;
+}
+
+#product1 .pro .des{
+    padding: 10px 0;
+    margin: 0;
+    text-align: start;
+}
+
+#product1 .pro .des span, h5, h4{
+    margin: 0;
+}
+
+#product1 .pro .des span{
+    color:silver;
+    font-size: 16px;
+}
+
+#product1 .pro .des h5{
+    padding-top: 7px;
+    font-size: 20px;
+}
+
+#product1 .pro .des h4{
+    padding-top: 7px;
+    font-size: 24px;
+    font-weight: 700;
+    color: rgb(17, 155, 155);
+}
+
+#product1 .pro .cart{
+    font-size: 20px;
+    border-radius: 50px;
+    border: solid 1px white;
+    position: absolute;
+    bottom: 20px;
+    right: 10px;
+}
+
+#product1 .pro_container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+#pagination{
+    text-align: center;
+}
+
+#pagination a {
+    text-decoration: none;
+    color: white;
+    padding: 15px;
+    border-radius: 4px;
+    font-weight: 600;
+    background-color: #088178;
+}
+
+#prodetails {
+    display: flex;
+    max-width: 1400px;
+    margin: 150px auto;
+}
+
+#prodetails .single-pro-image{
+    width: 40%; 
+    margin-right: 50px;
+}
+
+.small-img-group {
+    display: flex;
+    justify-content: space-between;
+}
+
+.small-img-col {
+    flex-basis: 24%;
+    cursor: pointer;
+}
+
+#prodetails .single-pro-details {
+    width: 50%;
+    padding-top: 30px;
+}
+
+#prodetails .single-pro-details h4{
+    padding: 40px 0 20px 0;
+}
+
+#prodetails .single-pro-details h2{
+    padding: 40px 0 20px 0;
+    font-size: 26px;
+}
+
+#prodetails .single-pro-details input:focus{
+    outline: none;
+}
+
+#prodetails .single-pro-details button{
+    border: none;
+    cursor:pointer;
+    background-color: rgb(133, 29, 29);
+    font-family: "Alumni Sans SC", sans-serif;
+    color: white;
+    border-radius: 5px;
+}
+
+#prodetails .single-pro-details span{
+    line-height: 25px;
+}
+
+.single-pro-details {
+    color: white;
+}

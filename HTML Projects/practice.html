@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            background-color: black;
+        }
+        button {
+            color: white;
+            border-radius: 25px;
+            font-size: 5px;
+            padding: 5px;
+            padding-left: 10px;
+            padding-right: 10px;
+            border: 0px;
+            margin: 5px;
+        }
+        #red{
+            background-color: red;
+        }
+        #blue{
+            background-color: blue;
+        }
+        #green{
+            background-color: green;
+        }
+        #purple{
+            background-color: purple;
+        }
+    </style>
+</head>
+<body id="body">
+    <button id="red" onclick="changecolor('red')"><u>Red</u></button>
+    <button id="blue" onclick="changecolor('blue')"><u>Blue</u></button>
+    <button id="green" onclick="changecolor('green')"><u>Green</u></button>
+    <button id="purple" onclick="changecolor('purple')"><u>Purple</u></button>
+    <script>
+        function changecolor(col) {
+            document.body.style.backgroundColor = col
+        }
+
+    </script>
+</body>
+</html>

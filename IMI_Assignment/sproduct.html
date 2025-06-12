@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SHOP</title>
+    <link rel = "stylesheet" href="style.css">
+</head>
+<body>
+    <section class="header">
+        <div class = "navbar">
+            <h1 class = "logo">≽NEVEN≼</NEVER></h1>
+            <ul style="padding-left: 0px;" class="nav_options">
+                <li><a href="./homepage.html" style="margin-left: 0px;"><strong>BASEMENT</strong></a></li>
+                <li><a href="./shop.html"><strong>SHOP</strong></a></li>
+                <li><a id = "sales_wording" href="#">SUPER DUPER SALES</a></li>
+                <li><a href="./about_us.html"><strong>ABOUT US</strong></a></li>
+                <li><a href="./contact.html" style="margin-right: 0px;"><strong>CONTACT</strong></a></li>
+            </ul>
+            <input type="text" class="search_bar" placeholder="SEARCH..." />
+        </div>
+    </section>
+
+    <section id="prodetails" class="section-p1">
+         <div class="single-pro-image">
+            <img src="./images/super_duper_sales_image.webp" width="100%" id="MainImg" alt="">
+            <div class="small-img-group">
+                <div class="small-img-col">
+                    <img src="./images/super_duper_sales_image.webp" width="100%"  class="small-img" alt="">
+                </div>
+                <div class="small-img-col">
+                    <img src="./images/worker.jpg" width="100%"  class="small-img" alt="">
+                </div>
+                <div class="small-img-col">
+                    <img src="./images/super_duper_sales_image.webp" width="100%"  class="small-img" alt="">
+                </div>
+                <div class="small-img-col">
+                    <img src="./images/super_duper_sales_image.webp" width="100%"  class="small-img" alt="">
+                </div>
+            </div>
+         </div>
+         <div class="single-pro-details">
+            <h6>Home / Graphic Card</h6>
+            <h4>MSI GeForce RTX 3060 8GB</h4>
+            <h2>$100</h2>
+            <input type="number" value="1">
+            <button>Add To Cart</button>
+            <h4>Product Details</h4>
+            <span>The MSI GeForce RTX 3060 8GB (e.g., Ventus 2X OC model) is a mid-range GPU based on the GA106 chip, featuring 3,584 CUDA cores and 8GB of GDDR6 memory running on a 128-bit bus with ~240 GB/s bandwidth. It offers a boost clock around 1,807 MHz and draws ~170W, requiring a 450W PSU. This card includes 3x DisplayPort 1.4a and 1x HDMI 2.1 outputs, and MSI’s versions—like the compact dual-fan Ventus 2X and higher-end triple-fan Gaming X Trio—are known for solid cooling. While well-suited for 1080p gaming with high/ultra settings and DLSS-enhanced ray tracing, the 8GB variant performs 15–30% slower than the original 12GB model due to reduced bandwidth and memory capacity, making it less ideal for 1440p or future memory-intensive titles. Prices typically range from USD 550–680, but the 12GB version is often better value. Overall, the MSI RTX 3060 8GB is a good option for budget-focused 1080p gamers, but those seeking better longevity should consider the 12GB version instead.</span>
+         </div>
+    </section>
+
+    <section class="footer">
+        <div class="copyright">
+            <p>Copyright 2025 NEVEN PTE LTD – All Rights Reserved</p>
+            <div class="T_AND_C">
+                <a href="#">Terms and Conditions</a>
+            </div>
+        </div>  
+    </section>
+
+    <script>
+        var MainImg = document.getElementById("MainImg");
+        var smallimg = document.getElementsByClassName("small-img");
+
+            smallimg[0].onclick = function(){
+                MainImg.src = smallimg[0].src;
+            }
+
+            smallimg[1].onclick = function(){
+                MainImg.src = smallimg[1].src;
+            }
+
+            smallimg[2].onclick = function(){
+                MainImg.src = smallimg[2].src;
+            }
+
+            smallimg[3].onclick = function(){
+                MainImg.src = smallimg[3].src;
+            }
+    </script>
+
+</body>
+</html>
