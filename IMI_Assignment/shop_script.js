@@ -1,6 +1,10 @@
-let listProductHTML = document.querySelector(".pro_container");
-let listCartHTML = document.querySelector(".cart_container")
-let iconCartSpan = document.querySelector(".cart_symbol")
+let iconCart = document.querySelector(".icon-cart");
+let closeCart = document.querySelector(".close");
+let body = document.querySelector("body")
+let listProductHTML = document.querySelector(".listProduct");
+let listCartHTML = document.querySelector(".listCart");
+let iconCartSpan = document.querySelector(".icon-cart span ");
+
 let carts = [];
 
 const listProducts = [
@@ -74,6 +78,14 @@ const listProducts = [
     }
 ]
 
+iconCart.addEventListener("click", () => {
+    body.classList.toggle('showCart')
+})
+
+closeCart.addEventListener("click", () => {
+    body.classList.toggle('showCart')
+})
+
 const addDataToHTML = () => {
     listProductHTML.innerHTML = "";
     if (listProducts.length > 0) {
@@ -88,7 +100,7 @@ const addDataToHTML = () => {
                     <h5>${product.name}</h5>
                     <h4>$${product.price}</h4>
                 </div>
-                <a href="#" class="cart_symbol">🛒</a>
+                <button class="add_to_cart_button">🛒</button>
             `;
             listProductHTML.appendChild(newProduct);
         });
@@ -100,10 +112,10 @@ window.addEventListener("DOMContentLoaded", () => {
     addDataToHTML();
 });
 
-console.log(listProductHTML)
+
 listProductHTML.addEventListener("click", (event)=>{
     let positionClick = event.target;
-    if (positionClick.classList.contains("cart_symbol")) {
+    if (positionClick.classList.contains("add_to_cart_button")) {
         let product_id = positionClick.parentElement.dataset.id;
         addToCart(product_id);
     }
@@ -125,16 +137,84 @@ const addToCart = (product_id) => {
         carts[positionThisProductInCart].quantity = carts[positionThisProductInCart].quantity + 1;
     }
     addCartToHTML();
-    console.log(carts)
+    addCartToMemory();
+}
+
+const addCartToMemory = () => {
+    localStorage.setItem('cart', JSON.stringify(carts));
 }
 
 const addCartToHTML = () => {
     listCartHTML.innerHTML = '';
+    let totalQuantity = 0;
     if(carts.length > 0){
         carts.forEach(cart => {
+            totalQuantity = totalQuantity + cart.quantity;
             let newCart = document.createElement('div');
-            newCart.classList.add()
-            // Redo the cart page : "https://www.youtube.com/watch?v=gXWohFYrI0M" 
-        })
+            newCart.classList.add("item")
+            newCart.dataset.id = cart.product_id;
+            let positionProduct = listProducts.findIndex((value) => value.id == cart.product_id);
+            let info = listProducts[positionProduct];
+            newCart.innerHTML = `
+                <div class="image">
+                    <img src="${info.image}" alt="">
+                </div>
+                <div class="name">
+                    ${info.name}
+                </div>
+                <div class="totalPrice">
+                    ${info.price * cart.quantity}
+                </div>
+                <div class="quantity">
+                    <span class="minus"><</span>
+                    <span>${cart.quantity}</span>
+                    <span class="plus">></span>
+                </div>
+            `;
+            listCartHTML.appendChild(newCart)
+            })
+    }
+    iconCartSpan.innerText = totalQuantity;
+}
+
+listCartHTML.addEventListener('click',(event) =>{
+    let positionClick = event.target;
+    if(positionClick.classList.contains('minus') || positionClick.classList.contains('plus')){
+        let product_id = positionClick.parentElement.parentElement.dataset.id;
+        let type = 'minus';
+        if(positionClick.classList.contains('plus')){
+            type = 'plus';
+        }
+        changeQuantity(product_id,type);
+    }
+})
+
+const changeQuantity = (product_id,type) => {
+    let positionItemInCart = carts.findIndex((value) => value.product_id == product_id)
+    if(positionItemInCart >= 0){
+        switch (type){
+            case'plus':
+                carts[positionItemInCart].quantity = carts[positionItemInCart].quantity + 1; 
+                break;
+            default:
+                let valueChange = carts[positionItemInCart].quantity - 1;
+                if (valueChange>0){
+                    carts[positionItemInCart].quantity = valueChange;
+                }else{
+                    carts.splice(positionItemInCart, 1);
+                }
+                break;
+        }
+    } 
+    addCartToMemory();
+    addCartToHTML()
+}
+
+const initApp = () =>{
+    if(localStorage.getItem('cart')){
+        carts = JSON.parse(localStorage.getItem('cart'));
+        addCartToHTML();
     }
 }
+
+initApp()

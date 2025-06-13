@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SHOP</title>
+    <title>Product</title>
     <link rel = "stylesheet" href="style.css">
 </head>
 <body>
@@ -17,11 +17,11 @@
                 <li><a href="./about_us.html"><strong>ABOUT US</strong></a></li>
                 <li><a href="./contact.html" style="margin-right: 0px;"><strong>CONTACT</strong></a></li>
             </ul>
-            <input type="text" class="search_bar" placeholder="SEARCH..." />
+            <a href="./cart.html" class="nav_cart">CART 🛒</a>
         </div>
     </section>
 
-    <section id="prodetails" class="section-p1">
+    <section id="prodetails" class="prodetails_container">
          <div class="single-pro-image">
             <img src="./images/super_duper_sales_image.webp" width="100%" id="MainImg" alt="">
             <div class="small-img-group">
@@ -54,31 +54,11 @@
         <div class="copyright">
             <p>Copyright 2025 NEVEN PTE LTD – All Rights Reserved</p>
             <div class="T_AND_C">
-                <a href="#">Terms and Conditions</a>
+                <a href="./terms and conditions.html">Terms and Conditions</a>
             </div>
         </div>  
     </section>
 
-    <script>
-        var MainImg = document.getElementById("MainImg");
-        var smallimg = document.getElementsByClassName("small-img");
-
-            smallimg[0].onclick = function(){
-                MainImg.src = smallimg[0].src;
-            }
-
-            smallimg[1].onclick = function(){
-                MainImg.src = smallimg[1].src;
-            }
-
-            smallimg[2].onclick = function(){
-                MainImg.src = smallimg[2].src;
-            }
-
-            smallimg[3].onclick = function(){
-                MainImg.src = smallimg[3].src;
-            }
-    </script>
-
+    <script src="script.js"></script>
 </body>
 </html>
